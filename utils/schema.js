@@ -88,15 +88,15 @@ export const USER_LANGUAGES = mysqlTable('user_languages', {
     created_at: timestamp('created_at').notNull().defaultNow()
 }); 
 
-// export const USER_OCCUPATION = mysqlTable('user_occupation', {
-//     id: int('id').notNull().primaryKey(),
-//     user_id: int('user_id').notNull(),
-//     place: varchar('place', { length: 255 }).notNull(),
-//     empt_type: varchar('empt_type', { length: 100 }).notNull(),
-//     emp_name: varchar('emp_name', { length: 255 }).default(null),
-//     emp_nature: varchar('emp_nature', { length: 255 }).notNull(),
-//     annual_income: int('annual_income', { length: 20 }).notNull()
-// });
+export const USER_OCCUPATION = mysqlTable('user_occupation', {
+    id: int('id').notNull().primaryKey(),
+    user_id: int('user_id').notNull(),
+    place: varchar('place', { length: 255 }).notNull(),
+    empt_type: varchar('empt_type', { length: 100 }).notNull(),
+    emp_name: varchar('emp_name', { length: 255 }).default(null),
+    emp_nature: varchar('emp_nature', { length: 255 }).notNull(),
+    annual_income: int('annual_income', { length: 20 }).notNull()
+});
 
 export const LANGUAGES = mysqlTable('languages', {
     id: int('id').notNull().primaryKey(),
