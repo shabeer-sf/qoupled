@@ -1,4 +1,9 @@
 // app/api/connections/status/[userId]/route.js
+import { db } from '@/utils';
+import { CONNECTIONS, USER } from '@/utils/schema';
+import { NextResponse } from 'next/server';
+import { eq, and, or } from 'drizzle-orm';
+import { authenticate } from '@/lib/jwtMiddleware';
 export async function GET(req, { params }) {
     // Authenticate user
     const authResult = await authenticate(req);
